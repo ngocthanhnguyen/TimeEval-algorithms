@@ -32,7 +32,7 @@ for folder in $subfolders; do
 	
 	# Pass the sub-folder name to the desired command
 	echo "$folder_name"
-	docker build -t $folder_name ./$folder_name || true
+	docker build -t adapad_$folder_name ./$folder_name || true
 	# your_command "$folder_name"  # Replace "your_command" with the actual command you want to run
 	
 done
