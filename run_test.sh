@@ -1,7 +1,7 @@
 #!/bin/bash
  
-data_file=Wave_Height
-execution_log=2-results/00_Wave_Height_log.txt
+data_file=Tide_Pressure
+execution_log=2-results/00_Tide_Pressure_log.txt
  
 # Function to run a program and track the total number of running processes
 run_program() {
@@ -14,10 +14,10 @@ run_program() {
   else   
       cd ..
       echo $1 "not executed yet"
-      timeout -k 9 2h docker run --rm --memory=3g --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "train", "dataInput": "/data/'$data_file'.train.csv", "dataOutput": "/results/'$1'_'$data_file'.ts", "modelInput": "/results/'$1'_'$data_file'.pkl", "modelOutput": "/results/'$1'_'$data_file'.pkl"}' &
+      docker run --rm --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "train", "dataInput": "/data/'$data_file'.train.csv", "dataOutput": "/results/'$1'_'$data_file'.ts", "modelOutput": "/results/'$1'_'$data_file'.pkl"}' &
       wait
       start=`date +%s.%N`
-      timeout -k 9 2h docker run --rm --memory=3g --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "execute", "dataInput": "/data/'$data_file'.test.csv", "dataOutput": "/results/'$1'_'$data_file'.ts", "modelInput": "/results/'$1'_'$data_file'.pkl", "modelOutput": "/results/'$1'_'$data_file'.pkl"}' &
+      docker run --rm --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "execute", "dataInput": "/data/'$data_file'.test.csv", "dataOutput": "/results/'$1'_'$data_file'.ts", "modelInput": "/results/'$1'_'$data_file'.pkl"}' &
       wait
       end=`date +%s.%N`
       runtime=$( echo "$end - $start" | bc -l )
