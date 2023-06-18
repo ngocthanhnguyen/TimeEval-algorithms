@@ -5,7 +5,7 @@ cd 0-base-images
 docker build -t registry.gitlab.hpi.de/akita/i/python3-base:0.2.5 ./python3-base
 docker build -t registry.gitlab.hpi.de/akita/i/python3-torch:0.2.5 ./python3-torch
 docker build -t registry.gitlab.hpi.de/akita/i/pyod:0.2.5 ./pyod
-docker build -t registry.gitlab.hpi.de/akita/i/r-base:0.2.5 ./r-base
+docker build -t registry.gitlab.hpi.de/akita/i/r-base ./r-base
 docker build -t registry.gitlab.hpi.de/akita/i/tsmp:0.2.5 ./tsmp
 docker build -t registry.gitlab.hpi.de/akita/i/java-base:0.2.5 ./java-base
 docker build -t registry.gitlab.hpi.de/akita/i/python2-base:0.2.5 ./python2-base
