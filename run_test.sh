@@ -14,10 +14,10 @@ run_program() {
   else   
       cd ..
       echo $1 "not executed yet"
-      timeout -k 9 2h docker run --rm --memory=3g --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "train", "dataInput": "/data/'$data_file'_train.csv", "dataOutput": "/results/'$1'_'$data_file'.ts", "modelInput": "/results/'$1'_'$data_file'.pkl", "modelOutput": "/results/'$1'_'$data_file'.pkl"}' &
+      timeout -k 9 2h docker run --rm --memory=3g --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "train", "dataInput": "/data/'$data_file'.train.csv", "dataOutput": "/results/'$1'_'$data_file'.ts", "modelInput": "/results/'$1'_'$data_file'.pkl", "modelOutput": "/results/'$1'_'$data_file'.pkl"}' &
       wait
       start=`date +%s.%N`
-      timeout -k 9 2h docker run --rm --memory=3g --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "execute", "dataInput": "/data/'$data_file'_test.csv", "dataOutput": "/results/'$1'_'$data_file'.ts", "modelInput": "/results/'$1'_'$data_file'.pkl", "modelOutput": "/results/'$1'_'$data_file'.pkl"}' &
+      timeout -k 9 2h docker run --rm --memory=3g --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "execute", "dataInput": "/data/'$data_file'.test.csv", "dataOutput": "/results/'$1'_'$data_file'.ts", "modelInput": "/results/'$1'_'$data_file'.pkl", "modelOutput": "/results/'$1'_'$data_file'.pkl"}' &
       wait
       end=`date +%s.%N`
       runtime=$( echo "$end - $start" | bc -l )
