@@ -1,7 +1,7 @@
 #!/bin/bash
  
-data_file=Tide_Pressure
-execution_log=2-results/00_Tide_Pressure_log.txt
+data_file=Wave_Height
+execution_log=2-results/00_Wave_Height_log.txt
  
 # Function to run a program and track the total number of running processes
 run_program() {
@@ -16,11 +16,13 @@ run_program() {
       echo $1 "not executed yet"
 	  
 	  if [[ " ${unsupervised[*]} " =~ " $1 " ]]; then
+	    echo "unsupervised"
 	    start=`date +%s.%N`
 		docker run --rm --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "execute", "dataInput": "/data/'$data_file'.total.csv", "dataOutput": "/results/'$1'_'$data_file'.ts"}' &
 		end=`date +%s.%N`
 		wait
 	  else	  
+	    echo "semi-supervised"
 	    docker run --rm --cpus=1 -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw $1:latest execute-algorithm '{"executionType": "train", "dataInput": "/data/'$data_file'.train.csv", "dataOutput": "/results/'$1'_'$data_file'.ts", "modelOutput": "/results/'$1'_'$data_file'.pkl"}' &
 	    wait
 	    start=`date +%s.%N`
