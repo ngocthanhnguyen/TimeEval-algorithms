@@ -12,8 +12,8 @@ from ocean_wnn.model import WNN
 class CustomParameters:
     train_window_size: int = 20
     hidden_size: int = 100
-    batch_size: int = 64
-    test_batch_size: int = 256
+    batch_size: int = 32
+    test_batch_size: int = 16
     epochs: int = 1
     split: float = 0.8
     early_stopping_delta: float = 0.05

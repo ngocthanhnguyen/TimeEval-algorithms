@@ -27,14 +27,14 @@
       {
         "name": "batch_size",
         "type": "int",
-        "defaultValue": 64,
+        "defaultValue": 32,
         "optional": "true",
         "description": "Number of instances trained at the same time"
       },
       {
         "name": "test_batch_size",
         "type": "int",
-        "defaultValue": 256,
+        "defaultValue": 32,
         "optional": "true",
         "description": "Batch size over test and validation dataset"
       },

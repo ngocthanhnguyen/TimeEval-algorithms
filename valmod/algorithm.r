@@ -1,5 +1,6 @@
 #!/usr/bin/env Rscript
 
+install.packages('tsmp',dependencies=TRUE, repos='http://cran.rstudio.com/')
 library(tsmp)
 library(jsonlite)
 

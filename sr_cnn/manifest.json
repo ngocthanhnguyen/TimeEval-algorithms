@@ -13,7 +13,7 @@
       {
         "name": "window_size",
         "type": "int",
-        "defaultValue": 128,
+        "defaultValue": 32,
         "optional": "true",
         "description": "Sliding window size"
       },
@@ -27,7 +27,7 @@
       {
         "name": "step",
         "type": "int",
-        "defaultValue": 64,
+        "defaultValue": 16,
         "optional": "true",
         "description": "stride size for training data generation"
       },
@@ -55,7 +55,7 @@
       {
         "name": "batch_size",
         "type": "int",
-        "defaultValue": 256,
+        "defaultValue": 32,
         "optional": "true",
         "description": "Number of data points trained in parallel"
       },
@@ -102,7 +102,7 @@
       {
         "name": "window_size",
         "type": "int",
-        "defaultValue": 128,
+        "defaultValue": 32,
         "optional": "true",
         "description": "Sliding window size"
       }

@@ -14,13 +14,13 @@ from bagel.kpi_series import KPISeries
 
 @dataclass
 class CustomParameters:
-    window_size: int = 120
+    window_size: int = 80
     latent_size: int = 8
     hidden_layer_shape: List[int] = field(default_factory=lambda: [100, 100])
     dropout: float = 0.1
     cuda: bool = False
     epochs: int = 50
-    batch_size: int = 128
+    batch_size: int = 32
     split: float = 0.8
     early_stopping_patience: int = 10
     early_stopping_delta: float = 0.05

@@ -12,13 +12,13 @@ from srcnn.evalue import evaluate
 
 @dataclass
 class CustomParameters:
-    window_size: int = 128
-    step: int = 64
+    window_size: int = 32
+    step: int = 16
     random_state: int = 42
     num: int = 10
     learning_rate: float = 1e-6
     epochs: int = 1
-    batch_size: int = 256
+    batch_size: int = 32
     n_jobs: int = 1
     split: float = 0.8
     early_stopping_delta: float = 0.05

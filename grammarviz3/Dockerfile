@@ -1,4 +1,4 @@
-FROM gitlab.hpi.de/akita/dependency_proxy/containers/maven:3-openjdk-11-slim as build
+FROM maven:3-openjdk-11-slim as build
 
 WORKDIR /app
 

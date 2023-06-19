@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Pull Intenet-available images
+docker pull r-base:4.1.0
+docker pull maven:3.8.3-jdk-11-slim
+docker pull numenta/nupic
+
 # Build base image
 cd 0-base-images
 docker build -t registry.gitlab.hpi.de/akita/i/python3-base:0.2.5 ./python3-base
@@ -16,7 +21,7 @@ docker build -t registry.gitlab.hpi.de/akita/i/timeeval-test-algorithm:0.2.5 ./t
 cd ..
 
 # Define the list of subfolders to ignore
-ignored_folders=("01-data" "02-results" ".git" "0-base-images" "3-scripts" "ts_bitmap")
+ignored_folders=("01-data" "02-results" ".git" "0-base-images" "3-scripts")
 
 # Get the list of sub-folders within the current folder, excluding the ones to ignore
 subfolders=$(find . -mindepth 1 -maxdepth 1 -type d)

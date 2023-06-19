@@ -95,12 +95,13 @@ class WNN(nn.Module):
                 x_hat = self.forward(x)
                 loss = criterion(x_hat, y)
                 losses.append(loss.item())
-            early_stopping.update(sum(losses)/len(losses))
-            if verbose:
-                logger.info(
-                    f"Epoch {epoch}: Training Loss {sum(train_losses) / len(train_dl)} \t "
-                    f"Validation Loss {sum(losses) / len(valid_dl)}"
-                )
+            if len(losses) > 0:
+                early_stopping.update(sum(losses)/len(losses))
+                if verbose:
+                    logger.info(
+                        f"Epoch {epoch}: Training Loss {sum(train_losses) / len(train_dl)} \t "
+                        f"Validation Loss {sum(losses) / len(valid_dl)}"
+                    )
         self._calculate_residual_error_distribution(valid_dl, threshold_percentile)
         return self
 

@@ -1,4 +1,4 @@
-FROM gitlab.hpi.de/akita/dependency_proxy/containers/numenta/nupic:latest as numenta
+FROM numenta/nupic:latest as numenta
 
 FROM registry.gitlab.hpi.de/akita/i/python2-base:0.2.5 as timeeval
 

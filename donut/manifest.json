@@ -13,7 +13,7 @@
         {
           "name": "window_size",
           "type": "int",
-          "defaultValue": 120,
+          "defaultValue": 20,
           "optional": "true",
           "description": "Size of sliding windows"
         },
@@ -34,7 +34,7 @@
         {
           "name": "linear_hidden_size",
           "type": "int",
-          "defaultValue": 100,
+          "defaultValue": 20,
           "optional": "true",
           "description": "Size of linear hidden layer"
         },

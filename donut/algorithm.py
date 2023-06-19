@@ -25,10 +25,10 @@ ARCNAME = "Model"
 
 @dataclass
 class CustomParameters:
-    window_size: int = 120
+    window_size: int = 20
     latent_size: int = 5
     regularization: float = 0.001
-    linear_hidden_size: int = 100
+    linear_hidden_size: int = 20
     epochs: int = 256  # max_epochs
     random_state: int = 42
     use_column_index: int = 0

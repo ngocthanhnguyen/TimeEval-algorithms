@@ -1,4 +1,4 @@
-FROM registry.gitlab.hpi.de/akita/i/tsmp:0.2.5
+FROM r-base:4.1.0
 
 LABEL maintainer="sebastian.schmidl@hpi.de"
 

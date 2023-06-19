@@ -1,4 +1,4 @@
-FROM registry.gitlab.hpi.de/akita/i/tsmp:0.2.5
+RUN R -e "install.packages('tsmp',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
 LABEL maintainer="sebastian.schmidl@hpi.de"
 
