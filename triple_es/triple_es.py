@@ -25,7 +25,7 @@ class TripleES:
                                      seasonal_periods=self.seasonal_periods,
                                      trend=self.trend,
                                      seasonal=self.seasonality,
-                                     use_boxcox=True,
+                                     use_boxcox=False,
                                      initialization_method="estimated")
         return model.fit()
 
