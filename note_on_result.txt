@@ -1,0 +1,37 @@
+NoveltySVR: slow
+PS-SVM: ok
+Ensemble GI: slow
+GrammarViz: java, not supported
+HOTSAX: slow
+TSBitmap: ok
+NormA-SJ: closed
+SAND: closed
+Series2graph: closed
+STAMP: ok - but R
+STOMP: R, not supported
+VALMOD: R, not supported
+Left STAMPi: ok
+SSA: closed
+NumetaHTM: seems OK, to run
+SubLOF: OK
+SubIF: ok
+DWT-MLEAD: ok
+FFT: ok
+SR: ok
+SHESD: ok - but R
+DSPOT: ok
+ARIMA: closed
+MedianMethod: ok
+SARIMA: ok
+Triple ES: bug
+PCI: ok
+RForest: ok
+XGboosting: no source available
+Tarzan: bug: RecursionError: maximum recursion depth exceeded in comparison
+Health ESN: bug, to revisit cannot load
+OceanWNN: bug, to revisit
+Bagel: bug, to revisit
+Donut: ok after fixed (change parameters)
+IE_CAE: ok
+sr_cnn: ok after fixed (change parameters)
+Sub-Fast-MCD: ok

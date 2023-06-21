@@ -1,0 +1,6 @@
+Zhou, F., Wang, G., Zhang, K., Liu, S. and Zhong, T., 2023. Semi-Supervised Anomaly Detection via Neural Process. IEEE Transactions on Knowledge and Data Engineering.
+Xu, H., Wang, Y., Jian, S., Liao, Q., Wang, Y. and Pang, G., 2022. Calibrated One-class Classification for Unsupervised Time Series Anomaly Detection. arXiv preprint arXiv:2207.12201.
+Wang, Y., Ting, K.M. and Shang, Y., 2023. A principled distributional approach to trajectory similarity measurement. arXiv preprint arXiv:2301.00393.
+Salles, R., Lima, J., Coutinho, R., Pacitti, E., Masseglia, F., Akbarinia, R., Chen, C., Garibaldi, J., Porto, F. and Ogasawara, E., 2023. SoftED: Metrics for Soft Evaluation of Time Series Event Detection. arXiv preprint arXiv:2304.00439.
+Nguyen, H., Hajisafi, A., Abdoli, A., Kim, S.H. and Shahabi, C., 2023, January. An Evaluation of Time-Series Anomaly Detection in Computer Networks. In 2023 International Conference on Information Networking (ICOIN) (pp. 104-109). IEEE. - no code but anomaly label, worth to learn
+Liang, Z., Liang, C., Liang, Z. and Wang, H., 2023. UniTS: A Universal Time Series Analysis Framework with Self-supervised Representation Learning. arXiv preprint arXiv:2303.13804.

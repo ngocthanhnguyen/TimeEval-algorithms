@@ -18,11 +18,11 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
 # Install R
-ENV R_BASE_VERSION 3.5.2-1
+ENV R_BASE_VERSION 4.0.0
 
 RUN set -eux; \
     apt-get update; \
-    apt-get install -y --no-install-recommends build-essential libopenblas-base r-base=${R_BASE_VERSION}; \
+    apt-get install -y --no-install-recommends build-essential libopenblas-base r-base; \
     apt-get clean; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* /usr/share/R/doc/*; \
     find /usr/lib/R/library -depth \

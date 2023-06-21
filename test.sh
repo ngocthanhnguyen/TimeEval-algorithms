@@ -1,19 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# call as: ./test.sh <algorithm_name> [test] [execute]
+# Store the command output in a variable
+output=$(sudo docker images | grep adapad_ | awk '{print $1}')
 
-algorithm=$1 # <algorithm_name>
+# Remove newlines and enclose each line in double quotes
+formatted_output=$(echo $output';' | tr '\n' ' ' | sed 's/ /\n/g' | sed 's/.*/"&"/' | tr -d '\n')
 
-docker rmi registry.gitlab.hpi.de/akita/i/$algorithm:latest
-
-docker build -t registry.gitlab.hpi.de/akita/i/$algorithm $algorithm
-
-docker rm $(docker ps -a -q)
-
-for execution in "$@"
-do
-  if [[ $execution == "train" || $execution == "execute" ]]
-  then
-    docker run --rm -v $(pwd)/1-data:/data:ro -v $(pwd)/2-results:/results:rw registry.gitlab.hpi.de/akita/i/$algorithm:latest execute-algorithm '{"executionType": "'$execution'", "dataInput": "/data/dataset.csv", "dataOutput": "/results/anomaly_scores.ts", "modelInput": "/model/model.txt", "modelOutput": "/model/model.txt"}'
-  fi
+# Break formatted_output into elements covered by double quotes
+echo "$formatted_output" | while IFS=';' read -r element; do
+    echo "$element"
 done

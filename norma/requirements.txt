@@ -1,0 +1,8 @@
+python==3.6
+numpy==1.15.4
+pandas==0.23.4
+scipy==1.1.0
+tqdm==4.28.1
+cython
+tslearn==0.1.29
+matrix_profile==0.1
